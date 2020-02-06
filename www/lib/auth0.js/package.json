@@ -40,7 +40,7 @@
     "browserify": "~2.35.0",
     "browserstack-cli": "0.3.1",
     "bump-version": "^0.5.0",
-    "eslint": "3.7.1",
+    "eslint": "6.8.0",
     "eslint-config-auth0-base": "6.0.0",
     "eslint-plugin-import": "1.16.0",
     "expect.js": "~0.2.0",
