@@ -1,0 +1,27 @@
+<div class="card clearfix animated zoomIn">
+  <img actual-src="{{product.images[0].src}}" ng-src="img/placeholder.png" style="width:100%" ng-click="openProduct({{product.id}})" class="img-{{product.id}}">
+  <div class="container">
+    <div class="on-sale" ng-if="product.on_sale" ng-click="openProduct({{product.id}})">{{$root.appLanguage.PRODUCT_SALE_TEXT}}</div>
+    <h4 class="name name-pro" ng-bind-html="product.name" ng-click="openProduct({{product.id}})"></h4>
+    <div class="short-description description" ng-bind-html="product.description"></div>
+    <div class="review">
+      <div class="star-rating rating" ng-bind-html="trustAsHtml(product.rating_star_html);" ng-if="product.rating_count>0"></div>
+    </div>
+    <div class="price" ng-if="!product.price_html" price="{{product.price}}"></div>
+    <div class="price price-category" ng-if="product.price_html" ng-bind-html="product.price_html"></div>
+
+  </div>
+  <div class="item item-input-inset ">
+    <button class="   button button-block button-assertive " ng-if="isProductInWishlist(product.id)" ng-click="addProductToWishlist(product)">
+   <i class="ion-heart-dislike"></i>
+   <ion-icon name="heart-dislike" style="font-size: x-large !important"></ion-icon>
+  </button>
+    <button class=" button button-block button-energized " ng-if="!isProductInWishlist(product.id)" ng-click="addProductToWishlist(product)">
+      <i class="ion-heart" style="font-size: xx-large !important"></i>
+
+   </button>
+    <button class="  button button-block button-positive" ng-if="allowAddToCart()" ng-click="addToCart(product)">
+      <i class="ion-ios-cart" style="font-size: x-large !important"></i>
+   </button>
+  </div>
+</div>

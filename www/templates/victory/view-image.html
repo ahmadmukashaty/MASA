@@ -1,0 +1,14 @@
+<ion-view title="{{$root.appLanguage.WISHLISH_TEXT}}" class="products-view" id="single-product" hide-nav-bar="true">
+<ion-content class="has-nofooter ">
+<div id="close" class="wishlist" style="z-index:900;position:absolute;left:0px;right:0px; color: black;margin-top:1em;padding-top:1em;" >
+<a  href="" ng-click="closeClicked()" style=" color: black; font-size:2em;margin-top:1em;padding-top:1em;" >
+<i class="ion-close view-image-i"></i>
+
+</a>
+</div>
+<div class="image">
+<!--<input style="z-index:900;position:absolute;left:0px;right:0px" type="range" name="range" ng-model="value" min="{{min}}"  max="{{max}}">-->
+<div class="image" ng-image-viewer imgs="imageUrls"  ></div>
+</div>
+</ion-content>
+</ion-view>

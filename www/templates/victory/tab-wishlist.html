@@ -1,0 +1,115 @@
+<ion-view title="{{$root.appLanguage.WISHLISH_TEXT}}" class="products-view" id="single-product">
+	<ion-content class="has-nofooter">
+
+		<ion-grid class="category-list clearfix wish">
+			<ion-col class="col col-50">
+				<ion-row class="row " ng-repeat="product in products track by product[2].id " ng-if="$index % 2 == 1">
+					<div class="card clearfix animated zoomIn">
+						<img actual-src="{{product[2].images[0].src}}" ng-src="img/placeholder.png" style="width:100%" ng-click="openProduct({{product[2].id}})" class="img-{{product.id}}" id="img-{{product.id}}">
+						<div class="container">
+							<div class="on-sale" ng-if="product[2].on_sale" ng-click="openProduct({{product[2].id}})">{{$root.appLanguage.PRODUCT_SALE_TEXT}}</div>
+							<h4 class="name name-pro" ng-bind-html="product[2].name" ng-click="openProduct({{product[2].id}})"></h4>
+							<div class="short-description description" ng-bind-html="product[2].description"></div>
+							<div class="review">
+								<!-- <div class="star-rating rating" ng-bind-html="trustAsHtml(product.rating_star_html);" ng-if="product.rating_count>0"></div> -->
+								<div class="star-rating rating" ng-bind-html="trustAsHtml(product.rating_star_html);"></div>
+							</div>
+							<div class="price" ng-if="!product[2].price_html" price="{{product[2].price}}"></div>
+							<div class="price price-category" ng-if="product[2].price_html" ng-bind-html="product[2].price_html"></div>
+
+						</div>
+
+
+
+						<div class="item item-input-inset ">
+							<button class="   button button-block button-assertive " ng-if="isProductInWishlist(product[2].id)" ng-click="addProductToWishlist(product[2])">
+
+						 <i class="icon ion-heart-broken "></i>-
+						</button>
+							<button class=" button button-block button-energized " ng-if="!isProductInWishlist(product[2].id)" ng-click="addProductToWishlist(product[2])">
+							<i class="icon ion-heart active"></i>+
+
+						 </button>
+							<button class="  button button-block button-positive" ng-if="product[2].in_stock" ng-click="addToCart(product[2])">
+							<i class="icon ion-ios-cart" ></i>
+						 </button>
+						</div>
+					</div>
+
+				</ion-row>
+			</ion-col>
+
+			<ion-col class="col col-50" style="padding-top: 0px;margin-top: -15px;">
+				<ion-row class="row " ng-repeat="product in products track by product[2].id " ng-if="$index % 2 == 0">
+					<div class="card clearfix animated zoomIn">
+						<img actual-src="{{product[2].images[0].src}}" ng-src="img/placeholder.png" style="width:100%" ng-click="openProduct({{product[2].id}})" class="img-{{product.id}}" id="img-{{product.id}}">
+						<div class="container">
+							<div class="on-sale" ng-if="product[2].on_sale" ng-click="openProduct({{product[2].id}})">{{$root.appLanguage.PRODUCT_SALE_TEXT}}</div>
+							<h4 class="name name-pro" ng-bind-html="product[2].name" ng-click="openProduct({{product[2].id}})"></h4>
+							<div class="short-description description" ng-bind-html="product[2].description"></div>
+							<div class="review">
+								<!-- <div class="star-rating rating" ng-bind-html="trustAsHtml(product.rating_star_html);" ng-if="product.rating_count>0"></div> -->
+								<div class="star-rating rating" ng-bind-html="trustAsHtml(product.rating_star_html);"></div>
+							</div>
+							<div class="price" ng-if="!product[2].price_html" price="{{product[2].price}}"></div>
+							<div class="price price-category" ng-if="product[2].price_html" ng-bind-html="product[2].price_html"></div>
+
+						</div>
+						<div class="item item-input-inset ">
+							<button class="   button button-block button-assertive " ng-if="isProductInWishlist(product[2].id)" ng-click="addProductToWishlist(product[2])">
+
+						 <i class="icon ion-heart-broken "></i>-
+						</button>
+							<button class=" button button-block button-energized " ng-if="!isProductInWishlist(product[2].id)" ng-click="addProductToWishlist(product[2])">
+							<i class="icon ion-heart active"></i>+
+
+						 </button>
+							<button class="  button button-block button-positive" ng-if="product[2].in_stock" ng-click="addToCart(product[2])">
+							<i class="icon ion-ios-cart" ></i>
+						 </button>
+						</div>
+					</div>
+
+					</div>
+				</ion-row>
+			</ion-col>
+		</ion-grid>
+
+
+
+
+
+<!--
+		<div class="category-list clearfix wish">
+			<div class="row">
+				<div class="col col-50" ng-repeat="product in products">
+					<product-card product='product[2]' showAddToCart="false"></product-card>
+				  <div  class=" card clearfix animated zoomIn" >
+							<img actual-src="{{product[2].images[0].src}}" ng-src="img/placeholder.png" style="width:100%"  ng-click="openProduct({{product[2].id}})"  class="img-{{product[2].id}}">
+							<div class="container" >
+								<div class="on-sale" ng-if="product[2].on_sale" ng-click="openProduct({{product[2].id}})">{{$root.appLanguage.PRODUCT_SALE_TEXT}}</div>
+								 <h4 class="name name-pro" ng-bind-html="product.name" ng-click="openProduct({{product[2].id}})"></h4>
+								 <div class="short-description description" ng-bind-html="product[2].description"></div>
+								 <div class="review">
+									 <div class="star-rating rating" ng-bind-html="trustAsHtml(product[2].rating_star_html);"></div>
+								 </div>
+									<div class="price" ng-if="!product[2].price_html" price="{{product[2].price}}"></div>
+									<div class="price price-category" ng-if="product[2].price_html" ng-bind-html="product[2].price_html"></div>
+									<button class=" button button-block button-assertive " ng-if="isProductInWishlist(product[2].id)" ng-click="addProductToWishlist(product[2])">
+									 <i class="ion-heart"></i> {{$root.appLanguage.REMOVE_FROM_WISHLIST_TEXT}}
+								 </button>
+									 <button class=" button button-block button-energized " ng-if="!isProductInWishlist(product[2].id)" ng-click="addProductToWishlist(product[2])" >
+										 <i  class="ion-heart"></i> {{$root.appLanguage.ADD_TO_WISHLIST_TEXT}}
+									 </button>
+									 {{showAddToCart}}
+							<button class="button button-block button-positive" ng-if="product[2].in_stock && showAddToCart " ng-click="addToCart(product[2])" >
+								<i class="ion-ios-cart"></i> {{$root.appLanguage.ADD_TO_CART_TEXT}}
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+	</ion-content>
+</ion-view>

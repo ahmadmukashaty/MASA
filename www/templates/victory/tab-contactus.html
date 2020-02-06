@@ -1,0 +1,60 @@
+<ion-view class="contact-us-page" title="{{$root.appLanguage.CONTACT_US_TEXT}}" hide-tabs>
+
+  <ion-nav-buttons side="left">
+    <!-- Toggle left side menu -->
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    <div class="loginTab" ng-if="isLoggedIn()===false" menu-close class="wishlist search" ng-click="openModalLogin()">
+      <a href="#/tab/home">
+        {{$root.appLanguage.LOGIN_TEXT}}
+      </a>
+    </div>
+    <div class="loginTab" ng-if="isLoggedIn()===true" menu-close class="wishlist search" ng-click="doLogout()">
+      <a href="#/tab/home">
+        {{$root.appLanguage.LOGOUT_TEXT}}
+      </a>
+    </div>
+  </ion-nav-buttons>
+  <ion-content scroll="false">
+		<!--<map center="{{ info_position }}" zoom="15">-->
+			<!--<marker-->
+				<!--id="marker_store"-->
+				<!--position="{{ info_position }}"-->
+				<!--title="{{ appSettings.contact_map_title }}"-->
+				<!--on-click="showInfoWindow('window_store')"-->
+				<!--visible="true">-->
+			<!--</marker>-->
+			<!--<info-window id="window_store" visible-on-marker="marker_store">-->
+				<!--<div ng-non-bindable="">-->
+					<!--<h5 class="title">{{ appSettings.contact_map_title }}</h5>-->
+					<!--<div class="content" ng-bind-html="trustAsHtml(appSettings.contact_map_content)"></div>-->
+				<!--</div>-->
+			<!--</info-window>-->
+		<!--</map>-->
+    <!-- <div class="avatar" align="center">
+      <img actual-src="img/victory/contact us.png" ng-src="img/placeholder.png">
+    </div> -->
+
+<div class="padding">
+    <div class="padding">
+      <button class="button button-balanced button-block  " ng-click="callPhone();">
+        <i class="icon ion-iphone"></i>
+        Call Now
+      </button>
+      <button class="button button-calm  button-block " ng-click="sendMail();">
+        <i class="icon ion-ios-email"></i>
+        Mail Us
+      </button>
+    </div>
+  </div>
+	</ion-content>
+    	<!-- <ion-footer-bar>
+    		<button class="button button-balanced " ng-click="callPhone();">
+    			<i class="ion-ios-telephone"></i>
+    			Call Now
+    		</button>
+    		<button class="button button-calm button-right" ng-click="sendMail();">
+    			<i class="ion-ios-email"></i>
+    			Mail Us
+    		</button>
+    	</ion-footer-bar> -->
+</ion-view>

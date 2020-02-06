@@ -1,0 +1,332 @@
+
+/* Empty. Add your own CSS if you like */
+
+/* My order*/
+.list-order-page .row>*, .single-order-page .row>* {
+    margin-left: -8px;
+}
+
+/* My account*/
+input.ng-pristine.ng-untouched.ng-valid.ng-empty {
+    width: 95%;
+}
+/* Tab page */
+ion-content.tab-detail.tab-account.scroll-content.ionic-scroll.overflow-scroll.has-header.has-footer.has-tabs-top{
+   margin-top: 10px;
+}
+
+/*Tab Account */
+.tab-nav.tabs {
+margin-top: 20px; 
+}
+
+.ng-pristine .list label:nth-child(1){
+    margin-top: 50px;
+}
+
+/* Wishlist page  */
+ion-col.col.col-50
+{
+  margin-bottom: 50px;
+}
+ /*  Cart page */
+ion-item.cart-item{
+    white-space: unset !important ;
+}
+
+.quantity.text-right 
+{
+    width: 110% !important;
+}
+.copyrights {
+  margin-top: unset;
+}
+
+/* Left Menu */
+.is-slidemenu .header-menu .logo-login {
+    margin: 40px 60px 30px 78px;
+} 
+/* Search Page : Search form*/
+.page-search .header-form-search form .item-input-inset {
+    padding-top: 16px;
+}
+button.button.button-small{
+    z-index: 10;
+}
+/*  Image zoom */
+img.image {
+    padding-top: 30%;
+}
+.view-image-i
+{
+    padding: 20px 20px 20px 20px;
+}
+div#close {
+    padding-top: 3em !important;
+}
+/*  Back bottom */
+button.button.back-button.hide.buttons.button-clear.header-item {
+    display: block;
+    padding: 0;
+    margin-top: 7px;
+}
+span.default-title{
+    transform: translate3d(0px, -10px, 0px);
+}
+span.previous-title {
+    transform: translate3d(0px, -10px, 0px);
+}
+.is-header .bar-stable .button.button-clear{
+    padding-bottom: 20px;
+    margin-top: 7px;
+    /* margin-right: 25px; */
+}
+/* categories buttom */
+.bar .button.button-clear, .bar button.button-clear{
+    margin-right:10px;
+}
+/*header bar*/
+ion-header-bar.bar-stable.is-header.header-main.mynavebar.bar.bar-header{
+    height: 75px
+}
+/*Empty cart page texts*/
+.CartIsEmptyText{
+    color:#333 ;
+    padding-top:15px ;
+    text-align: center;
+    
+}
+/*To edit title 0f (tab/cart) to be at center */
+.title.title-center.header-item {
+    left: 0px !important;
+    right: 0px !important;
+    top: 13px;
+    /* padding-top: 13px;*/
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    /* margin-top: 0px; */
+    /* padding-top: 0px; */
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.card-top {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+}
+
+.card-bottom {
+    margin-top: 1px;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+}
+
+/* On mouse-over, add a deeper shadow */
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+
+.card>.container {
+    padding: 2px 16px;
+    /* border-top: 1px solid #e7e7e7; */
+}
+
+.container h4 {
+    text-transform: uppercase;
+    font-family: MyRiadPro, "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    font-size: 30px;
+    font-size: 3.5vw;
+}
+
+.short-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 1em;
+    /* fallback */
+    max-height: 3em;
+    /* fallback */
+    min-height: 3em;
+    /*   -webkit-line-clamp: 2; */
+    /* number of lines to show */
+    /*  -webkit-box-orient: vertical;*/
+}
+
+/* .category-list .name, .product-item-slider-style .name {
+ margin-top: 5px;
+ } */
+
+.button.button-energized {
+    font-family: MyRiadPro, "Segoe UI", Arial, sans-serif;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+}
+
+.price {
+    color: #5377ff !important;
+    margin-top: 2px;
+}
+
+div.item-input-inset {
+    border: 0;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+}
+
+div.item-input-inset button {
+    margin-bottom: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.category-list .name, .product-item-slider-style .name {
+    min-height: 3em;
+    max-height: 3em;
+    /* line-height: normal; */
+}
+
+.add-review .invalid-required {
+    color: #d50f0fcc;
+}
+
+.empty-cart {
+    color: #5377ff;
+    text-align: center;
+}
+.copyrights .text a{
+    color:#69b800;
+    
+}
+.invalid-required
+{
+    color: #ef652e !important;
+}
+
+
+ion-content.has-footer{
+    background: url(./../img/1-1.jpg)
+}
+
+.page-search .header-form-search{
+    background: inherit;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*IPHONE X*/
+
+
+
+
+
+.tabs-footer .tab-nav{
+    height: 70px;
+}
+body {
+    background-color: #e4e9ed;
+    /*    iOS 11.0*/
+    /*    padding-top: constant(safe-area-inset-top);*/
+    
+    /* iOS 11.2 */
+    /*    padding-top: env(safe-area-inset-top);*/
+}
+
+
+.is-header .header-main {
+    
+    height:63px;
+    
+}
+.is-header .header-main *{
+    padding-top: 5px;
+}
+.has-header {
+    top: 63px;
+}
+.has-footer {
+    bottom: 70px;
+}
+.bar-footer {
+    height:70px;
+}
+
+.is-header .shoppingcart .count{
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    top: 12px;
+    right: -7px;
+    padding-top:0px;
+}
+
+.is-header .wishlist .count {
+    top: 12px;
+    right: -6px;
+    padding-top:0px;
+}
+
+.back-button{
+    top: 10px;
+}
+.back-text{
+    display:none;
+}
+/*end IPHONE X*/
+
+
+/*rrrr*/
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
+    height: calc(44px + constant(safe-area-inset-top));
+}
+
+
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
+    margin-top: constant(safe-area-inset-top);
+}
+
+div.tab-nav.tabs {
+    height: calc(49px + constant(safe-area-inset-bottom));
+}
+
+ion-content.padding.scroll-content.ionic-scroll.has-header.has-tabs {
+    top: calc(64px + constant(safe-area-inset-top));
+}
+
+.item-complex.item-icon-left .item-content {
+    padding-left: 80px;
+}
+.item-complex.item-icon-left .item-content .icon {
+    left: calc(constant(safe-area-inset-left) + 40px);
+}

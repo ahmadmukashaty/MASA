@@ -1,0 +1,90 @@
+<ion-view id="single-product" hide-back-button="true" class="home-page" title="MASA" show-tabs>
+	<ion-nav-buttons side="left"> 
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+		
+		<!-- <div class="loginTab" ng-if="isLoggedIn()===false" menu-close class="wishlist search" ng-click="openModalLogin()"style="width: auto;  min-width:106px" >
+			<a href="#/tab/home" >
+				{{$root.appLanguage.LOGIN_TEXT}}
+			</a>
+		</div>
+		<div class="loginTab" ng-if="isLoggedIn()===true" menu-close class="wishlist search" ng-click="doLogout()">
+			<a href="#/tab/home">
+				{{$root.appLanguage.LOGOUT_TEXT}}
+			</a>
+		</div> -->
+	</ion-nav-buttons>
+	<ion-content class="has-footer">
+		 <ion-slide-box class="home-slider" on-slide-changed="slideHasChanged($index)" delegate-handle='home-zlider' show-pager="true" active-slide="activeSlide" slide-interval="30000">
+			<ion-slide ng-repeat="image in sliderImages">
+				<div class="slider-img">
+					<img ng-src="{{image.url}}" class="fullscreen-image" actual-src="{{image.src}}" /></img>
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+		<ion-grid class="category-list clearfix wish">
+			<ion-col class="col col-50">
+				<ion-row class="row " ng-repeat="product in productData track by product.id " ng-show="$index % 2 == 0">
+					<div class="card clearfix animated zoomIn">
+						<img actual-src="{{product.images[0].src}}" ng-src="img/placeholder.png" style="width:100%" ng-click="openProduct({{product.id}})" class="img-{{product.id}}" id="img-{{product.id}}"></img>
+						<div class="container">
+							<div class="on-sale" ng-if="product.on_sale" ng-click="openProduct({{product.id}})">{{$root.appLanguage.PRODUCT_SALE_TEXT}}</div>
+							<h4 class="name name-pro" ng-bind-html="product.name" ng-click="openProduct({{product.id}})"></h4>
+							<div class="short-description description" ng-bind-html="product.description"></div>
+							<div class="review">
+								<!-- <div class="star-rating rating" ng-bind-html="trustAsHtml(product.rating_star_html);" ng-if="product.rating_count>0"></div> -->
+								<div class="star-rating rating" ng-bind-html="trustAsHtml(product.rating_star_html);"></div>
+							</div>
+							<div class="price" ng-if="!product.price_html" price="{{product.price}}"></div>
+							<div class="price price-category" ng-if="product.price_html" ng-bind-html="product.price_html"></div>
+
+						</div>
+						<div class="item item-input-inset ">
+							<button class=" button button-block button-assertive " ng-if="isProductInWishlist(product.id)" ng-click="addProductToWishlist(product)">
+							 <i class="icon ion-heart-broken "></i>-
+							</button>
+							<button class=" button button-block button-energized " ng-if="!isProductInWishlist(product.id)" ng-click="addProductToWishlist(product)" style="font-weight: normal !important;">
+								<i class="icon ion-heart active"></i>+
+							 </button>
+							<button class="  button button-block button-positive " ng-if="product.in_stock" ng-click="addToCart(product)">
+								<i class="icon ion-ios-cart" ></i>
+							 </button>
+						</div>
+					</div>
+
+				</ion-row>
+			</ion-col>
+			<ion-col class="col col-50" style="padding-top: 0px;margin-top: -15px;">
+				<ion-row class="row " ng-repeat="product in productData track by product.id " ng-show="$index % 2 == 1">
+					<div class="card clearfix animated zoomIn">
+						<img actual-src="{{product.images[0].src}}" ng-src="img/placeholder.png" style="width:100%" ng-click="openProduct({{product.id}})" class="img-{{product.id}}" id="img-{{product.id}}"></img>
+						<div class="container">
+							<div class="on-sale" ng-if="product.on_sale" ng-click="openProduct({{product.id}})">{{$root.appLanguage.PRODUCT_SALE_TEXT}}</div>
+							<h4 class="name name-pro" ng-bind-html="product.name" ng-click="openProduct({{product.id}})"></h4>
+							<div class="short-description description" ng-bind-html="product.description"></div>
+							<div class="review">
+								<!-- <div class="star-rating rating" ng-bind-html="trustAsHtml(product.rating_star_html);" ng-if="product.rating_count>0"></div> -->
+								<div class="star-rating rating" ng-bind-html="trustAsHtml(product.rating_star_html);"></div>
+							</div>
+							<div class="price" ng-if="!product.price_html" price="{{product.price}}"></div>
+							<div class="price price-category" ng-if="product.price_html" ng-bind-html="product.price_html"></div>
+
+						</div>
+						<div class="item item-input-inset ">
+							<button class=" button button-block button-assertive " ng-if="isProductInWishlist(product.id)" ng-click="addProductToWishlist(product)">
+							 <i class="icon ion-heart-broken "></i>-
+							</button>
+							<button class=" button button-block button-energized " ng-if="!isProductInWishlist(product.id)" ng-click="addProductToWishlist(product)" style="font-weight: normal !important;">
+								<i class="icon ion-heart active"></i>+
+							 </button>
+							<button class="  button button-block button-positive " ng-if="product.in_stock" ng-click="addToCart(product)">
+								<i class="icon ion-ios-cart" ></i>
+							 </button>
+						</div>
+					</div>
+				</ion-row>
+			</ion-col>
+		</ion-grid>
+		<ion-infinite-scroll class="active" immediate-check="false" ng-if="canLoadMoreProductData" on-infinite="loadMoreProductData()" distance="5%">
+		</ion-infinite-scroll>
+	</ion-content>
+</ion-view>

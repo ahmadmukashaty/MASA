@@ -1,0 +1,98 @@
+<ion-view id="single-product" hide-back-button="true" class="home-page" title="MASA" show-tabs>
+	<ion-nav-buttons side="left">
+		<!-- Toggle left side menu -->
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+		<div class="loginTab" ng-if="isLoggedIn()===false" menu-close class="wishlist search" ng-click="openModalLogin()">
+			<a href="#/tab/home">
+				{{$root.appLanguage.LOGIN_TEXT}}
+			</a>
+		</div>
+		<div class="loginTab" ng-if="isLoggedIn()===true" menu-close class="wishlist search" ng-click="doLogout()">
+			<a href="#/tab/home">
+				{{$root.appLanguage.LOGOUT_TEXT}}
+			</a>
+		</div>
+	</ion-nav-buttons>
+	<ion-content class="has-footer">
+		<ion-slide-box  class="home-slider" on-slide-changed="slideHasChanged($index)"  does-continue="true" slide-interval="1000"  >
+			<ion-slide ng-if="!enableSliderFromServer">
+				<div class="slider-img">
+					<img actual-src="img/victory/slider-1.jpg" ng-src="img/placeholder.png" alt="">
+				</div>
+			</ion-slide>
+			<ion-slide ng-if="!enableSliderFromServer">
+				<div class="slider-img">
+					<img actual-src="img/victory/slider-2.jpg" ng-src="img/placeholder.png" alt="">
+				</div>
+			</ion-slide>
+			<ion-slide ng-if="!enableSliderFromServer">
+				<div class="slider-img">
+					<img actual-src="img/victory/slider-3.jpg" ng-src="img/placeholder.png" alt="">
+				</div>
+			</ion-slide>
+			<ion-slide ng-if="!enableSliderFromServer">
+				<div class="slider-img">
+					<img actual-src="img/victory/slider-4.jpg" ng-src="img/placeholder.png" alt="">
+				</div>
+			</ion-slide>
+			<ion-slide ng-if="!enableSliderFromServer">
+				<div class="slider-img">
+					<img actual-src="img/victory/slider-5.jpg" ng-src="img/placeholder.png" alt="">
+				</div>
+			</ion-slide>
+			<ion-slide ng-if="enableSliderFromServer" ng-repeat="slider in sliderList">
+				<div class="slider-img">
+					<img actual-src="{{slider.src}}" ng-src="" alt="">
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+
+		<div class="category-list clearfix wish">
+				<div class="row ">
+				<div class="col col-50 " ng-repeat="product in productData" >
+					<div  class="card clearfix animated zoomIn" >
+						<img actual-src="{{product.images[0].src}}" ng-src="img/placeholder.png"style="width:100%"  ng-click="openProduct({{product.id}})"  class="img-{{product.id}}">
+						<div class="container" >
+							<div class="on-sale" ng-if="product.on_sale" ng-click="openProduct({{product.id}})">{{$root.appLanguage.PRODUCT_SALE_TEXT}}</div>
+							 <h4 class="name name-pro" ng-bind-html="product.name" ng-click="openProduct({{product.id}})"></h4>
+							 <div class="short-description description" ng-bind-html="product.description"></div>
+							 <div class="review">
+								 <div class="star-rating rating" ng-if="product.rating_count>0" ng-bind-html="trustAsHtml(product.rating_star_html);"></div>
+							 </div>
+								<div class="price" ng-if="!product.price_html" price="{{product.price}}"></div>
+								<div class="price price-category" ng-if="product.price_html" ng-bind-html="product.price_html"></div>
+								<!-- <button class=" button button-block button-assertive " ng-if="isProductInWishlist(product.id)" ng-click="addProductToWishlist(product)">
+								 <i class="ion-heart"></i> {{$root.appLanguage.REMOVE_FROM_WISHLIST_TEXT}}
+							 </button>
+								 <button class=" button button-block button-energized " ng-if="!isProductInWishlist(product.id)" ng-click="addProductToWishlist(product)" >
+									 <i  class="ion-heart"></i> {{$root.appLanguage.ADD_TO_WISHLIST_TEXT}}
+								 </button>
+						<button class="button button-block button-positive" ng-if="product.in_stock" ng-click="addToCart(product)" >
+							<i class="ion-ios-cart"></i> {{$root.appLanguage.ADD_TO_CART_TEXT}}
+						</button> -->
+						<div class="item item-input-inset cart_wishlist">
+							<button class=" button button-block button-assertive " ng-if="isProductInWishlist(product.id)" ng-click="addProductToWishlist(product)">
+							 <i class="ion-heart"></i>
+						 	</button>
+							 <button class=" button button-block button-energized " ng-if="!isProductInWishlist(product.id)" ng-click="addProductToWishlist(product)">
+									<i  class="ion-heart"></i>
+							 </button>
+							 <button   class="button button-block button-positive" ng-if="product.in_stock" ng-click="addToCart(product)">
+									<i class="ion-ios-cart"></i>
+							 </button>
+					 	</div>
+					</div>
+				</div >
+			</div>
+		</div>
+		</div>
+
+		<ion-infinite-scroll
+			class="active"
+			immediate-check="false"
+			ng-if="canLoadMoreProductData"
+			on-infinite="loadMoreProductData()"
+			distance="5%">
+		</ion-infinite-scroll>
+	</ion-content>
+</ion-view>

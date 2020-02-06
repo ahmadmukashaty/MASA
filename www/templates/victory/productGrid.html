@@ -1,0 +1,12 @@
+<ion-grid class="category-list clearfix wish">
+    <ion-col class="col col-50">
+      <ion-row  class="row " ng-repeat="product in products track by product.id " ng-show="$index % 2 == 0">
+        <product-card product='product'></product-card>
+    </ion-row >
+    </ion-col>
+    <ion-col class="col col-50">
+      <ion-row  class="row " ng-repeat="product in products track by product.id " ng-show="$index % 2 == 1">
+        <product-card product='product'></product-card>
+    </ion-row >
+    </ion-col>
+</ion-grid>

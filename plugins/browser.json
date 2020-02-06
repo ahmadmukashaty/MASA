@@ -1,0 +1,33 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com-sarriaroman-photoviewer": {
+      "PACKAGE_NAME": "com.eblatech.masa.purchaser"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.eblatech.masa.purchaser"
+    },
+    "cordova-plugin-email": {
+      "PACKAGE_NAME": "com.eblatech.masa.purchaser"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.eblatech.masa.purchaser"
+    },
+    "cordova-plugin-keyboard": {
+      "PACKAGE_NAME": "com.eblatech.masa.purchaser"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.eblatech.masa.purchaser"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.eblatech.masa.purchaser"
+    }
+  },
+  "dependent_plugins": {}
+}
