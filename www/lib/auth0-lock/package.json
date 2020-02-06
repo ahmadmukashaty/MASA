@@ -54,7 +54,7 @@
     "css-loader": "^0.26.1",
     "dotenv": "^4.0.0",
     "enzyme": "2.7.0",
-    "eslint": "^3.19.0",
+    "eslint": "^4.18.2",
     "eslint-config-prettier": "^1.7.0",
     "eslint-plugin-react": "^6.10.3",
     "expect.js": "^0.3.1",
