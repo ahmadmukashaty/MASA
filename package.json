@@ -8,7 +8,7 @@
         "@ionic-native/photo-viewer": "^4.20.0",
         "@ionic-native/status-bar": "^4.20.0",
         "@ionic/cli-plugin-gulp": "^1.0.1",
-        "@ionic/cloud": "^0.8.0",
+        "@ionic/cloud": "^0.16.2",
         "angular-jwt": "^0.1.10",
         "angular-lock": "^3.0.0",
         "auth0-js": "^9.10.0",
